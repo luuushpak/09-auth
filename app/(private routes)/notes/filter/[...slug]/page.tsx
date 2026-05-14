@@ -1,4 +1,4 @@
-import { fetchNotes } from "@/lib/api/clientApi";
+import { fetchNotes } from "@/lib/api/serverApi";
 import { DEFAULT_QUERY, DEFAULT_PAGE } from "@/constants/notes";
 import {
   dehydrate,
