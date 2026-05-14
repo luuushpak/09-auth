@@ -3,19 +3,29 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #333;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 0.96),
+    rgba(30, 41, 59, 0.96)
+  );
   color: white;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.16);
+  backdrop-filter: saturate(180%) blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 20;
 }
 
 .header a {
   text-decoration: none;
   color: white;
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: 700;
+  letter-spacing: 0.03em;
 }
 
 .header a:hover {
-  color: #ddd;
+  color: #c7d2fe;
 }
 
 .navigation {
@@ -23,7 +33,8 @@
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 1rem;
+  gap: 0.9rem;
+  align-items: center;
 }
 
 .navigation li {
@@ -33,10 +44,18 @@
 
 .navigation li a {
   text-decoration: none;
-  color: white;
-  font-size: 1rem;
+  color: #e2e8f0;
+  font-size: 0.98rem;
+  padding: 0.72rem 1rem;
+  border-radius: 999px;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .navigation li a:hover {
-  color: #ddd;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  transform: translateY(-1px);
 }

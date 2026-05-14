@@ -1,3 +1,4 @@
+import Link from "next/link";
 import css from "./Home.module.css";
 import { Metadata } from "next";
 
@@ -21,11 +22,18 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <div className={css.container}>
-      <h1 className={css.title}>404 - Page not found</h1>
-      <p className={css.description}>
-        Sorry, the page you are looking for does not exist.
-      </p>
-    </div>
+    <main className={css.main}>
+      <div className={css.heroCard}>
+        <span className={css.heroBadge}>404 error</span>
+        <h1 className={css.title}>Page not found</h1>
+        <p className={css.description}>
+          Sorry, the page you are looking for does not exist. Use the button
+          below to return to the dashboard.
+        </p>
+        <Link href="/" className={css.ctaButton}>
+          Go to home
+        </Link>
+      </div>
+    </main>
   );
 }

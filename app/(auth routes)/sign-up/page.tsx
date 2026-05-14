@@ -45,44 +45,57 @@ export default function SingUp() {
 
   return (
     <main className={css.mainContent}>
-      <h1 className={css.formTitle}>Sign up</h1>
-      <form
-        className={css.form}
-        onSubmit={(e) => {
-          e.preventDefault();
-          handleSubmit(e.currentTarget);
-        }}
-      >
-        <div className={css.formGroup}>
-          <label htmlFor="email">Email</label>
-          <input
-            id="email"
-            type="email"
-            name="email"
-            className={css.input}
-            required
-          />
+      <div className={css.card}>
+        <div className={css.header}>
+          <span className={css.badge}>Create your account</span>
+          <h1 className={css.formTitle}>Sign up</h1>
+          <p className={css.subtitle}>
+            Register to start saving notes and managing your workspace.
+          </p>
         </div>
 
-        <div className={css.formGroup}>
-          <label htmlFor="password">Password</label>
-          <input
-            id="password"
-            type="password"
-            name="password"
-            className={css.input}
-            required
-          />
-        </div>
+        <form
+          className={css.form}
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSubmit(e.currentTarget);
+          }}
+        >
+          <div className={css.formGroup}>
+            <label htmlFor="email">Email</label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              className={css.input}
+              required
+            />
+          </div>
 
-        <div className={css.actions}>
-          <button type="submit" className={css.submitButton} disabled={loading}>
-            {loading ? "Creating account..." : "Sign up"}
-          </button>
-        </div>
+          <div className={css.formGroup}>
+            <label htmlFor="password">Password</label>
+            <input
+              id="password"
+              type="password"
+              name="password"
+              className={css.input}
+              required
+            />
+          </div>
 
-        {error && <p className={css.error}>{error}</p>}
-      </form>
+          <div className={css.actions}>
+            <button
+              type="submit"
+              className={css.submitButton}
+              disabled={loading}
+            >
+              {loading ? "Creating account..." : "Sign up"}
+            </button>
+          </div>
+
+          {error && <p className={css.error}>{error}</p>}
+        </form>
+      </div>
     </main>
   );
 }

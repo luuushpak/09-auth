@@ -44,45 +44,57 @@ export default function SignIn() {
 
   return (
     <main className={css.mainContent}>
-      <form
-        className={css.form}
-        onSubmit={(e) => {
-          e.preventDefault();
-          handleSubmit(e.currentTarget);
-        }}
-      >
-        <h1 className={css.formTitle}>Sign in</h1>
-
-        <div className={css.formGroup}>
-          <label htmlFor="email">Email</label>
-          <input
-            id="email"
-            type="email"
-            name="email"
-            className={css.input}
-            required
-          />
+      <div className={css.card}>
+        <div className={css.header}>
+          <span className={css.badge}>Welcome back</span>
+          <h1 className={css.formTitle}>Sign in</h1>
+          <p className={css.subtitle}>
+            Sign in to your NoteHub account and continue managing your notes.
+          </p>
         </div>
 
-        <div className={css.formGroup}>
-          <label htmlFor="password">Password</label>
-          <input
-            id="password"
-            type="password"
-            name="password"
-            className={css.input}
-            required
-          />
-        </div>
+        <form
+          className={css.form}
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSubmit(e.currentTarget);
+          }}
+        >
+          <div className={css.formGroup}>
+            <label htmlFor="email">Email</label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              className={css.input}
+              required
+            />
+          </div>
 
-        <div className={css.actions}>
-          <button type="submit" className={css.submitButton} disabled={loading}>
-            {loading ? "Signing in..." : "Sign in"}
-          </button>
-        </div>
+          <div className={css.formGroup}>
+            <label htmlFor="password">Password</label>
+            <input
+              id="password"
+              type="password"
+              name="password"
+              className={css.input}
+              required
+            />
+          </div>
 
-        {error && <p className={css.error}>{error}</p>}
-      </form>
+          <div className={css.actions}>
+            <button
+              type="submit"
+              className={css.submitButton}
+              disabled={loading}
+            >
+              {loading ? "Signing in..." : "Sign in"}
+            </button>
+          </div>
+
+          {error && <p className={css.error}>{error}</p>}
+        </form>
+      </div>
     </main>
   );
 }

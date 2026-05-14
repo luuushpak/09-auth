@@ -35,15 +35,17 @@ function NotePreviewClient({ id }: NotePreviewClientProps) {
           className={css.backBtn}
           aria-label="Close modal"
         >
-          Close
+          ← Back to Notes
         </button>
         <div className={css.item}>
           <div className={css.header}>
             <h2>{data.title}</h2>
+            <span className={css.tag}>{data.tag}</span>
           </div>
-          <p className={css.tag}>{data.tag}</p>
           <p className={css.content}>{data.content}</p>
-          <p className={css.date}>{data.createdAt}</p>
+          <p className={css.date}>
+            Created: {new Date(data.createdAt).toLocaleDateString()}
+          </p>
         </div>
       </div>
     </Modal>

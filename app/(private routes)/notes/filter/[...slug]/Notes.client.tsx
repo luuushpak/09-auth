@@ -55,7 +55,7 @@ function NotesClient({ tag }: NotesClientProps) {
           />
         )}
         <Link href="/notes/action/create" className={css.button}>
-          Create note +
+          Create note
         </Link>
       </header>
       {isLoading && <Loader />}

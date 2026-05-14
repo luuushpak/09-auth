@@ -1,32 +1,38 @@
 .app {
-  width: 90%;
-  max-width: 1280px;
-  margin: 0px auto;
-  padding: 0 16px 16px;
+  width: min(96%, 1280px);
+  margin: 0 auto;
+  padding: 24px 16px 32px;
   flex: 1;
 }
 
 .toolbar {
-  margin-bottom: 16px;
+  margin-bottom: 24px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 0;
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #dee2e6;
+  gap: 16px;
+  padding: 22px 24px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
 }
 
 .button {
-  padding: 6px 12px;
-  font-size: 16px;
+  padding: 12px 20px;
+  font-size: 0.98rem;
   color: #fff;
-  background-color: #0d6efd;
+  background: linear-gradient(135deg, #4f46e5, #2563eb);
   border: none;
-  border-radius: 4px;
+  border-radius: 999px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .button:hover {
-  background-color: #0b5ed7;
+  transform: translateY(-1px);
+  box-shadow: 0 16px 40px rgba(79, 70, 229, 0.2);
 }
