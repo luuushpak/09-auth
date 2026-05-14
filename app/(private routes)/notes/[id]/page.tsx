@@ -1,5 +1,5 @@
-import { fetchNoteById } from "@/lib/api";
-import NoteDetailsClient from "@/app/notes/[id]/NoteDetails.client";
+import { fetchNoteById } from "@/lib/api/clientApi";
+import NoteDetailsClient from "@/app/(private routes)/notes/[id]/NoteDetails.client";
 import {
   QueryClient,
   dehydrate,
@@ -23,7 +23,7 @@ export async function generateMetadata({
     openGraph: {
       title: `NoteHub - ${note.title}`,
       description: note.content,
-      url: `https://08-zustand-iota-ebon.vercel.app/notes/${note.id}`,
+      url: `${process.env.NEXT_PUBLIC_API_URL}/notes/${note.id}`,
       images: [
         {
           url: "https://ac.goit.global/fullstack/react/notehub-og-meta.jpg",

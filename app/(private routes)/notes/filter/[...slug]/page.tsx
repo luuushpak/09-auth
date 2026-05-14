@@ -1,4 +1,4 @@
-import { fetchNotes } from "@/lib/api";
+import { fetchNotes } from "@/lib/api/clientApi";
 import { DEFAULT_QUERY, DEFAULT_PAGE } from "@/constants/notes";
 import {
   dehydrate,
@@ -25,7 +25,7 @@ export async function generateMetadata({
     openGraph: {
       title: `NoteHub - ${tag}`,
       description: "Easily organize and filter your notes using tags.",
-      url: `https://08-zustand-iota-ebon.vercel.app/notes/filter/${tag}`,
+      url: `${process.env.NEXT_PUBLIC_API_URL}/notes/filter/${tag}`,
       images: [
         {
           url: "https://ac.goit.global/fullstack/react/notehub-og-meta.jpg",

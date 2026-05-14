@@ -5,6 +5,7 @@ import "modern-normalize";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import TanStackProvider from "@/components/TanStackProvider/TanStackProvider";
+import AuthProvider from "@/components/AuthProvider/AuthProvider";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
     title: "NoteHub",
     description:
       "Capture your ideas and keep your notes organized with NoteHub.",
-    url: "https://08-zustand-iota-ebon.vercel.app/",
+    url: `${process.env.NEXT_PUBLIC_API_URL}/`,
     images: [
       {
         url: "https://ac.goit.global/fullstack/react/notehub-og-meta.jpg",
@@ -43,12 +44,14 @@ export default function RootLayout({
     <html lang="en" className={roboto.variable}>
       <body>
         <TanStackProvider>
-          <Header />
-          <main>
-            {children}
-            {modal}
-          </main>
-          <Footer />
+          <AuthProvider>
+            <Header />
+            <main>
+              {children}
+              {modal}
+            </main>
+            <Footer />
+          </AuthProvider>
         </TanStackProvider>
       </body>
     </html>
